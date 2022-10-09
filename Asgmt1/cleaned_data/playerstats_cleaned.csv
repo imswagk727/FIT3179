@@ -1,0 +1,12 @@
+player,number,position,team,effpg,games,minutes_played,field_goals,field_goal_attempts,field_goal_percentage,three_point_field_goals,three_point_field_goal_attempts,three_point_field_goal_percentage,two_point_field_goals,two_point_field_goal_attempts,two_point_field_goal_percentage,effective_field_goal_percentage,free_throws,free_throws_attempts,free_throws_percentage,offensive_rebounds,defensive_rebounds,total_rebounds,assists,steals,blocks,turnovers,personal_fouls,points
+Zhelin Wang,31,Center,China,9.6,5,103,14,28,0.5,0,0,NA,14,28,0.5,0.5,12,17,0.706,7,18,25,1,3,3,5,17,40
+Zhou Qi,15,Center,China,13.2,5,134,18,34,0.529,3,10,0.3,15,24,0.625,0.574,6,15,0.4,6,32,38,6,4,7,9,16,45
+Jianlian Yi,11,Power Forward,China,17.2,5,138,31,60,0.517,5,14,0.357,26,46,0.565,0.558,22,36,0.611,9,30,39,6,5,3,13,12,89
+Junfei Ren,20,Power Forward,China,0,3,24,1,3,0.333,0,0,NA,1,3,0.333,0.333,0,0,NA,0,3,3,1,0,0,4,3,2
+Shuo Fang,5,Point Guard,China,6.8,5,108,14,35,0.4,7,24,0.292,7,11,0.636,0.5,4,4,1,1,7,8,8,6,0,6,10,39
+Zhao Jiwei,24,Point Guard,China,6.6,5,116,6,20,0.3,4,13,0.308,2,7,0.286,0.4,7,8,0.875,0,8,8,14,7,0,4,8,23
+Abudurexiti Abudushalamu,23,Small Forward,China,1,4,22,2,5,0.4,1,3,0.333,1,2,0.5,0.5,2,2,1,1,1,2,0,1,0,3,4,7
+Xiaochuan Zhai,9,Small Forward,China,7,5,103,12,19,0.632,0,3,0,12,16,0.75,0.632,2,3,0.667,6,10,16,1,3,1,4,9,26
+Ailun Guo,6,Shooting Guard,China,6.4,5,107,17,50,0.34,3,16,0.188,14,34,0.412,0.37,5,8,0.625,4,3,7,19,6,0,6,12,42
+Rui Zhao,1,Shooting Guard,China,5,5,117,10,30,0.333,3,14,0.214,7,16,0.438,0.383,7,9,0.778,2,5,7,9,5,0,4,12,30
+Sun Minghui,17,Shooting Guard,China,4,4,53,5,16,0.313,1,6,0.167,4,10,0.4,0.344,1,3,0.333,2,2,4,11,4,0,2,6,12

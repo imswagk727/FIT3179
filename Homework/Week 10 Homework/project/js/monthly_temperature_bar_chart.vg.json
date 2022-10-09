@@ -1,0 +1,111 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "AU State Monthly Temperature"
+  },
+  "description": "hello im description.",
+  "data": {
+    "url": "data/temp.csv"
+  },
+  "params": [
+    {
+      "name": "state_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "VIC",
+          "NSW",
+          "QLD"
+        ],
+        "labels": [
+          "select a state",
+          "VIC",
+          "NSW",
+          "QLD"
+        ],
+        "name": "State Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.state == state_selection"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Month",
+      "type": "nominal",
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labelAngle": 0,
+        "labelPadding": 4
+      },
+      "sort": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    "y": {
+      "field": "min",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          30
+        ]
+      },
+      "axis": {
+        "gridColor": {
+          "condition": {
+            "test": "datum.value === 0",
+            "value": "black"
+          },
+          "value": "#ddd"
+        }
+      }
+    },
+    "y2": {
+      "field": "max"
+    },
+    "tooltip": [
+      {
+        "field": "Month",
+        "type": "nominal"
+      },
+      {
+        "field": "max",
+        "type": "quantitative",
+        "format": ","
+      },
+      {
+        "field": "min",
+        "type": "quantitative",
+        "format": ","
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": "bar"
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -30
+      },
+      "encoding": {
+        "text": {
+          "field": "Month",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "white"
+        }
+      }
+    }
+  ]
+}
