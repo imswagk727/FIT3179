@@ -1,7 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "the population per state, engineers per state, and hurricanes per state",
-  "repeat": {"row": ["visitors"]},
+  "repeat": {
+    "row": [
+      "visitors"
+    ]
+  },
   "resolve": {
     "scale": {
       "color": "independent"
@@ -11,14 +15,14 @@
     "width": 500,
     "height": 300,
     "data": {
-      "url": "data/visitors.csv"
+      "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/visitors.csv"
     },
     "transform": [
       {
         "lookup": "id",
         "from": {
           "data": {
-            "url": "data/us-10m.json",
+            "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/us-10m.json",
             "format": {
               "type": "topojson",
               "feature": "states"
@@ -29,7 +33,22 @@
         "as": "geo"
       }
     ],
-    "projection": {"type": "albersUsa"},
+    "params": [
+      {
+        "name": "highlight",
+        "select": {
+          "type": "point",
+          "on": "mouseover"
+        }
+      },
+      {
+        "name": "select",
+        "select": "point"
+      }
+    ],
+    "projection": {
+      "type": "albersUsa"
+    },
     "mark": "geoshape",
     "encoding": {
       "shape": {
@@ -37,9 +56,47 @@
         "type": "geojson"
       },
       "color": {
-        "field": {"repeat": "row"},
-        "type": "quantitative"
-      }
+        "field": {
+          "repeat": "row"
+        },
+        "type": "quantitative",
+        "scale": {
+          "scheme": "lightgreyteal"
+        }
+      },
+      "fillOpacity": {
+        "condition": {
+          "param": "select",
+          "value": 1
+        },
+        "value": 0.1
+      },
+      "strokeWidth": {
+        "condition": [
+          {
+            "param": "select",
+            "empty": false,
+            "value": 2
+          },
+          {
+            "param": "highlight",
+            "empty": false,
+            "value": 1
+          }
+        ],
+        "value": 0
+      },
+      "tooltip": [
+        {
+          "field": "state",
+          "type": "nominal"
+        },
+        {
+          "field": "visitors",
+          "type": "quantitative",
+          "format": ","
+        }
+      ]
     }
   }
 }
