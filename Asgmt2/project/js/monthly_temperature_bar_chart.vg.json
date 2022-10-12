@@ -5,7 +5,7 @@
   },
   "description": "hello im description.",
   "data": {
-    "url": "data/temp.csv"
+    "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp.csv"
   },
   "params": [
     {
