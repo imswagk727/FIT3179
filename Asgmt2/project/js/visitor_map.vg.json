@@ -1,5 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "2019 US Visitor Arrival"
+  },
   "description": "the population per state, engineers per state, and hurricanes per state",
   "repeat": {
     "row": [

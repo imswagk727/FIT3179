@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Top Nationalities of Foreign Travelers to the U.S."
+    },
+    "description": "Vega-Lite version of bar chart from https://observablehq.com/@d3/learn-d3-scales.",
+    "width": 400,
+    "data": {
+      "values": [
+        {"name": "Canada", "count": 20.7},
+        {"name": "Mexico", "count": 18.1},
+        {"name": "United Kingdom", "count": 4.8},
+        {"name": "Japan", "count": 3.8},
+        {"name": "China ", "count": 2.8},
+        {"name": "South Korea", "count": 2.3},
+        {"name": "Brazil", "count": 2.1},
+        {"name": "Germany", "count": 2.1},
+        {"name": "France", "count": 1.8},
+        {"name": "India", "count": 1.5}
+      ]
+    },
+    "encoding": {
+      "y": {"field": "name", "type": "nominal", "sort": "-x", "title": null},
+      "x": {"field": "count", "type": "quantitative", "title": null}
+    },
+    "layer": [{
+      "mark": "bar",
+      "encoding": {
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "title": "In million"
+        }
+      }
+    }, {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "xOffset": -4,
+        "aria": false
+      },
+      "encoding": {
+        "text": {"field": "count", "type": "quantitative"},
+        "color": {
+          "condition": {
+            "test": {"field": "count", "gt": 15},
+            "value": "white"
+          },
+          "value": "black"
+        }
+      }
+    }]
+  }
