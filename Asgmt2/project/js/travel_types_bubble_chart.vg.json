@@ -11,19 +11,9 @@
       {"name": "cx", "update": "width / 2"},
       {"name": "cy", "update": "height / 2"}
     ],
-    "data": [
-      {
-        "name": "table",
-        "values": [
-          {"category": "Chilling on a beach", "popularity": 0.38},
-          {"category": "Camping trip", "popularity": 0.25},
-          {"category": "City tour", "popularity": 0.30},
-          {"category": "Road trip", "popularity": 0.16},
-          {"category": "Cruise", "popularity": 0.13},
-          {"category": "Hiking", "popularity": 0.18}
-        ]
-      }
-    ],
+    "data": {
+      "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp.csv"
+    },
     "scales": [
       {
         "name": "size",

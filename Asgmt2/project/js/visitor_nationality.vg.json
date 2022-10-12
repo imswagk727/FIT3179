@@ -3,7 +3,6 @@
     "title": {
       "text": "Top Nationalities of Foreign Travelers to the U.S."
     },
-    "description": "Vega-Lite version of bar chart from https://observablehq.com/@d3/learn-d3-scales.",
     "width": 400,
     "data": {
       "values": [
