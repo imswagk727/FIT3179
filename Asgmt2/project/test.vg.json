@@ -5,7 +5,7 @@
     },
     "description": "hello im description.",
     "data": {
-        "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp.csv"
+        "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp_us.csv"
     },
     "params": [
         {
@@ -14,15 +14,29 @@
                 "input": "select",
                 "options": [
                     null,
-                    "VIC",
-                    "NSW",
-                    "QLD"
+                    "California",
+                    "Connecticut",
+                    "Illinois",
+                    "Nevada",
+                    "Florida",
+                    "Alaska",
+                    "Hawaii",
+                    "Michigan",
+                    "New York",
+                    "Massachusetts"
                 ],
                 "labels": [
                     "select a state",
-                    "VIC",
-                    "NSW",
-                    "QLD"
+                    "California",
+                    "Connecticut",
+                    "Illinois",
+                    "Nevada",
+                    "Florida",
+                    "Alaska",
+                    "Hawaii",
+                    "Michigan",
+                    "New York",
+                    "Massachusetts"
                 ],
                 "name": "State Selection: "
             }
@@ -82,7 +96,7 @@
                     "type": "nominal"
                 },
                 "color": {
-                    "value": "#db646f"
+                    "value": "black"
                 }
             }
         },
@@ -96,13 +110,13 @@
                     "field": "min",
                     "type": "ordinal",
                     "scale": {
-                        "domain": [0, 30],
-                        "range": ["#e6959c", "#911a24"]
-                      },
-                    "title": "Min and Max"
-                },
-                "size": {
-                    "value": 100
+                        
+                        "range": [
+                            "#e6959c",
+                            "#911a24"
+                        ]
+                    },
+                    "title": "min"
                 },
                 "opacity": {
                     "value": 1
