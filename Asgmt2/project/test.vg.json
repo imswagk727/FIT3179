@@ -10,10 +10,10 @@
     "params": [
       {
         "name": "state_selection",
+        "value": "California",
         "bind": {
           "input": "select",
           "options": [
-            null,
             "Alaska",
             "California",
             "Connecticut",
@@ -26,7 +26,6 @@
             "New York"
           ],
           "labels": [
-            "select a state",
             "Alaska",
             "California",
             "Connecticut",
