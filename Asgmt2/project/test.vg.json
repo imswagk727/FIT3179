@@ -1,127 +1,140 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "AU State Monthly Temperature"
+      "text": "Popular State Monthly Temperature"
     },
     "description": "hello im description.",
     "data": {
-        "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp_us.csv"
+      "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp_us.csv"
     },
     "params": [
-        {
-            "name": "state_selection",
-            "bind": {
-                "input": "select",
-                "options": [
-                    null,
-                    "California",
-                    "Connecticut",
-                    "Illinois",
-                    "Nevada",
-                    "Florida",
-                    "Alaska",
-                    "Hawaii",
-                    "Michigan",
-                    "New York",
-                    "Massachusetts"
-                ],
-                "labels": [
-                    "select a state",
-                    "California",
-                    "Connecticut",
-                    "Illinois",
-                    "Nevada",
-                    "Florida",
-                    "Alaska",
-                    "Hawaii",
-                    "Michigan",
-                    "New York",
-                    "Massachusetts"
-                ],
-                "name": "State Selection: "
-            }
+      {
+        "name": "state_selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Alaska",
+            "California",
+            "Connecticut",
+            "Florida",
+            "Hawaii",
+            "Illinois",
+            "Massachusetts",
+            "Michigan",
+            "Nevada",
+            "New York"
+          ],
+          "labels": [
+            "select a state",
+            "Alaska",
+            "California",
+            "Connecticut",
+            "Florida",
+            "Hawaii",
+            "Illinois",
+            "Massachusetts",
+            "Michigan",
+            "Nevada",
+            "New York"
+          ],
+          "name": "State Selection: "
         }
+      }
     ],
     "transform": [
-        {
-            "filter": "datum.state == state_selection"
-        }
+      {
+        "filter": "datum.state == state_selection"
+      },
+      {
+        "calculate": "(datum.min-32) * 5 / 9",
+        "as": "Low"
+      },
+      {
+        "calculate": "(datum.max-32) * 5 / 9",
+        "as": "High"
+      }
     ],
     "encoding": {
-        "x": {
-            "field": "Month",
-            "type": "nominal",
-            "axis": {
-                "domain": false,
-                "ticks": false,
-                "labelAngle": 0,
-                "labelPadding": 4
-            },
-            "sort": [
-                "1",
-                "2",
-                "3"
-            ]
+      "x": {
+        "field": "Month",
+        "type": "nominal",
+        "axis": {
+          "domain": false,
+          "ticks": false,
+          "labelAngle": 0,
+          "labelPadding": 4
         },
-        "y": {
-            "field": "min",
-            "type": "quantitative"
-        },
-        "y2": {
-            "field": "max"
-        },
-        "tooltip": [
-            {
-                "field": "Month",
-                "type": "nominal"
-            },
-            {
-                "field": "max",
-                "type": "quantitative",
-                "format": ","
-            },
-            {
-                "field": "min",
-                "type": "quantitative",
-                "format": ","
-            }
+        "sort": [
+          "1",
+          "2",
+          "3"
         ]
+      },
+      "y": {
+        "field": "Low",
+        "type": "quantitative",
+        "scale": {
+          "domain": [
+            -20,
+            40
+          ]
+        },
+        "axis": {
+          "gridColor": {
+            "condition": {
+              "test": "datum.value === 0",
+              "value": "black"
+            },
+            "value": "#ddd"
+          }
+        }
+      },
+      "y2": {
+        "field": "High"
+      },
+      "tooltip": [
+        {
+          "field": "Month",
+          "type": "nominal"
+        },
+        {
+          "field": "High",
+          "type": "quantitative",
+          "format": ".1f"
+        },
+        {
+          "field": "Low",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      ]
     },
     "layer": [
-        {
-            "mark": "line",
-            "encoding": {
-                "detail": {
-                    "field": "month",
-                    "type": "nominal"
-                },
-                "color": {
-                    "value": "black"
-                }
-            }
-        },
-        {
-            "mark": {
-                "type": "point",
-                "filled": true
-            },
-            "encoding": {
-                "color": {
-                    "field": "min",
-                    "type": "ordinal",
-                    "scale": {
-                        
-                        "range": [
-                            "#e6959c",
-                            "#911a24"
-                        ]
-                    },
-                    "title": "min"
-                },
-                "opacity": {
-                    "value": 1
-                }
-            }
+      {
+        "mark": "line",
+        "encoding": {
+            "color": {"value": "black"}
         }
+        
+      },
+      {
+        "mark": {"type": "point","filled": true},
+        "encoding": {
+            "y": {
+                "field": "Low"
+            },
+            "color": {"value": "black"}
+        }
+      },
+      {
+        "mark": {"type": "point","filled": true},
+        "encoding": {
+            "y": {
+                "field": "High"
+            },
+            "color": {"value": "black"}
+        }
+      }
     ]
-}
+  }

@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "AU State Monthly Temperature"
+    "text": "Popular State Monthly Temperature"
   },
   "description": "hello im description.",
   "data": {
-    "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp.csv"
+    "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp_us.csv"
   },
   "params": [
     {
@@ -14,15 +14,29 @@
         "input": "select",
         "options": [
           null,
-          "VIC",
-          "NSW",
-          "QLD"
+          "Alaska",
+          "California",
+          "Connecticut",
+          "Florida",
+          "Hawaii",
+          "Illinois",
+          "Massachusetts",
+          "Michigan",
+          "Nevada",
+          "New York"
         ],
         "labels": [
           "select a state",
-          "VIC",
-          "NSW",
-          "QLD"
+          "Alaska",
+          "California",
+          "Connecticut",
+          "Florida",
+          "Hawaii",
+          "Illinois",
+          "Massachusetts",
+          "Michigan",
+          "Nevada",
+          "New York"
         ],
         "name": "State Selection: "
       }
@@ -31,6 +45,14 @@
   "transform": [
     {
       "filter": "datum.state == state_selection"
+    },
+    {
+      "calculate": "(datum.min-32) * 5 / 9",
+      "as": "Low"
+    },
+    {
+      "calculate": "(datum.max-32) * 5 / 9",
+      "as": "High"
     }
   ],
   "encoding": {
@@ -50,12 +72,12 @@
       ]
     },
     "y": {
-      "field": "min",
+      "field": "Low",
       "type": "quantitative",
       "scale": {
         "domain": [
-          0,
-          30
+          -20,
+          40
         ]
       },
       "axis": {
@@ -69,7 +91,7 @@
       }
     },
     "y2": {
-      "field": "max"
+      "field": "High"
     },
     "tooltip": [
       {
@@ -77,34 +99,41 @@
         "type": "nominal"
       },
       {
-        "field": "max",
+        "field": "High",
         "type": "quantitative",
-        "format": ","
+        "format": ".1f"
       },
       {
-        "field": "min",
+        "field": "Low",
         "type": "quantitative",
-        "format": ","
+        "format": ".1f"
       }
     ]
   },
   "layer": [
     {
-      "mark": "bar"
+      "mark": "line",
+      "encoding": {
+          "color": {"value": "black"}
+      }
+      
     },
     {
-      "mark": {
-        "type": "text",
-        "dy": -30
-      },
+      "mark": {"type": "point","filled": true},
       "encoding": {
-        "text": {
-          "field": "Month",
-          "type": "nominal"
-        },
-        "color": {
-          "value": "white"
-        }
+          "y": {
+              "field": "Low"
+          },
+          "color": {"value": "black"}
+      }
+    },
+    {
+      "mark": {"type": "point","filled": true},
+      "encoding": {
+          "y": {
+              "field": "High"
+          },
+          "color": {"value": "black"}
       }
     }
   ]
