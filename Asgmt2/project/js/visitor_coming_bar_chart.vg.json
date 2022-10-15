@@ -2,22 +2,150 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
     "values": [
-      {"category":"A", "group": "x", "value":0.1},
-      {"category":"A", "group": "y", "value":0.6},
-      {"category":"A", "group": "z", "value":0.9},
-      {"category":"B", "group": "x", "value":0.7},
-      {"category":"B", "group": "y", "value":0.2},
-      {"category":"B", "group": "z", "value":1.1},
-      {"category":"C", "group": "x", "value":0.6},
-      {"category":"C", "group": "y", "value":0.1},
-      {"category":"C", "group": "z", "value":0.2}
+      {
+        "Year": "2017",
+        "Transport Used": "Road transport",
+        "Tourist arrivals in thousands": 2648.13
+      },
+      {
+        "Year": "2017",
+        "Transport Used": "Railway transport",
+        "Tourist arrivals in thousands": 117.79
+      },
+      {
+        "Year": "2017",
+        "Transport Used": "Air transport",
+        "Tourist arrivals in thousands": 7998.46
+      },
+      {
+        "Year": "2017",
+        "Transport Used": "Sea transport",
+        "Tourist arrivals in thousands": 161.22
+      },
+      {
+        "Year": "2018",
+        "Transport Used": "Road transport",
+        "Tourist arrivals in thousands": 2797.05
+      },
+      {
+        "Year": "2018",
+        "Transport Used": "Railway transport",
+        "Tourist arrivals in thousands": 121.92
+      },
+      {
+        "Year": "2018",
+        "Transport Used": "Air transport",
+        "Tourist arrivals in thousands": 8639.08
+      },
+      {
+        "Year": "2018",
+        "Transport Used": "Sea transport",
+        "Tourist arrivals in thousands": 162.38
+      },
+      {
+        "Year": "2019",
+        "Transport Used": "Road transport",
+        "Tourist arrivals in thousands": 2936.47
+      },
+      {
+        "Year": "2019",
+        "Transport Used": "Railway transport",
+        "Tourist arrivals in thousands": 141.71
+      },
+      {
+        "Year": "2019",
+        "Transport Used": "Air transport",
+        "Tourist arrivals in thousands": 9552.15
+      },
+      {
+        "Year": "2019",
+        "Transport Used": "Sea transport",
+        "Tourist arrivals in thousands": 162.38
+      },
+      {
+        "Year": "2020",
+        "Transport Used": "Road transport",
+        "Tourist arrivals in thousands": 729.88
+      },
+      {
+        "Year": "2020",
+        "Transport Used": "Railway transport",
+        "Tourist arrivals in thousands": 42.84
+      },
+      {
+        "Year": "2020",
+        "Transport Used": "Air transport",
+        "Tourist arrivals in thousands": 4150.8
+      },
+      {
+        "Year": "2020",
+        "Transport Used": "Sea transport",
+        "Tourist arrivals in thousands": 99.21
+      }
     ]
   },
-  "mark": "bar",
+  "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+  "mark": {
+    "type": "bar",
+    "stroke": "black",
+    "cursor": "pointer"
+  },
   "encoding": {
-    "x": {"field": "category"},
-    "y": {"field": "value", "type": "quantitative"},
-    "xOffset": {"field": "group"},
-    "color": {"field": "group"}
+    "x": {
+      "field": "Year"
+    },
+    "y": {
+      "field": "Tourist arrivals in thousands",
+      "type": "quantitative"
+    },
+    "xOffset": {
+      "field": "Transport Used"
+    },
+    "color": {
+      "field": "Transport Used"
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 1
+        }
+      ],
+      "value": 0
+    },
+    "fillOpacity": {
+      "condition": {
+        "param": "select",
+        "value": 1
+      },
+      "value": 0.1
+    },
+    "tooltip": [
+      {
+        "field": "Year",
+        "type": "nominal"
+      },
+      {
+        "field": "Transport Used",
+        "type": "nominal"
+      },
+      {
+        "field": "Tourist arrivals in thousands",
+        "type": "quantitative",
+        "format": ".1f"
+      }
+    ]
   }
 }

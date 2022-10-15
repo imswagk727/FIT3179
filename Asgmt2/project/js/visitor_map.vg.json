@@ -52,7 +52,11 @@
     "projection": {
       "type": "albersUsa"
     },
-    "mark": "geoshape",
+    "mark": {
+      "type": "geoshape",
+      "stroke": "#1a1a1a",
+      "cursor": "pointer"
+    },
     "encoding": {
       "shape": {
         "field": "geo",

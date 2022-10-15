@@ -1,139 +1,103 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "Popular State Monthly Temperature"
-    },
-    "description": "hello im description.",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "2019 US Visitor Arrival"
+  },
+  "description": "the population per state, engineers per state, and hurricanes per state",
+  "repeat": {
+    "row": [
+      "visitors"
+    ]
+  },
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    }
+  },
+  "spec": {
+    "width": 500,
+    "height": 300,
     "data": {
-      "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp_us.csv"
+      "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/visitors.csv"
     },
-    "params": [
-      {
-        "name": "state_selection",
-        "value": "California",
-        "bind": {
-          "input": "select",
-          "options": [
-            "Alaska",
-            "California",
-            "Connecticut",
-            "Florida",
-            "Hawaii",
-            "Illinois",
-            "Massachusetts",
-            "Michigan",
-            "Nevada",
-            "New York"
-          ],
-          "labels": [
-            "Alaska",
-            "California",
-            "Connecticut",
-            "Florida",
-            "Hawaii",
-            "Illinois",
-            "Massachusetts",
-            "Michigan",
-            "Nevada",
-            "New York"
-          ],
-          "name": "State Selection: "
-        }
-      }
-    ],
     "transform": [
       {
-        "filter": "datum.state == state_selection"
-      },
-      {
-        "calculate": "(datum.min-32) * 5 / 9",
-        "as": "Low"
-      },
-      {
-        "calculate": "(datum.max-32) * 5 / 9",
-        "as": "High"
+        "lookup": "id",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/us-10m.json",
+            "format": {
+              "type": "topojson",
+              "feature": "states"
+            }
+          },
+          "key": "id"
+        },
+        "as": "geo"
       }
     ],
-    "encoding": {
-      "x": {
-        "field": "Month",
-        "type": "nominal",
-        "axis": {
-          "domain": false,
-          "ticks": false,
-          "labelAngle": 0,
-          "labelPadding": 4
-        },
-        "sort": [
-          "1",
-          "2",
-          "3"
-        ]
+    "params": [
+      {
+        "name": "highlight",
+        "select": {"type": "point", "on": "mouseover"}
       },
-      "y": {
-        "field": "Low",
+      {"name": "select", "select": "point"}
+    ],
+    "projection": {
+      "type": "albersUsa"
+    },
+    "mark": {
+      "type": "geoshape",
+      "stroke": "gray",
+      "cursor": "pointer"
+    },
+    "encoding": {
+      "shape": {
+        "field": "geo",
+        "type": "geojson"
+      },
+      "color": {
+        "field": {
+          "repeat": "row"
+        },
         "type": "quantitative",
         "scale": {
-          "domain": [
-            -20,
-            40
-          ]
-        },
-        "axis": {
-          "gridColor": {
-            "condition": {
-              "test": "datum.value === 0",
-              "value": "black"
-            },
-            "value": "#ddd"
-          }
+          "scheme": "lightgreyteal"
         }
       },
-      "y2": {
-        "field": "High"
+      "fillOpacity": {
+        "condition": {
+          "param": "select",
+          "value": 1
+        },
+        "value": 0.1
+      },
+      "strokeWidth": {
+        "condition": [
+          {
+            "param": "select",
+            "empty": false,
+            "value": 2
+          },
+          {
+            "param": "highlight",
+            "empty": false,
+            "value": 1
+          }
+        ],
+        "value": 0
       },
       "tooltip": [
         {
-          "field": "Month",
+          "field": "state",
           "type": "nominal"
         },
         {
-          "field": "High",
+          "field": "visitors",
           "type": "quantitative",
-          "format": ".1f"
-        },
-        {
-          "field": "Low",
-          "type": "quantitative",
-          "format": ".1f"
+          "format": ","
         }
       ]
-    },
-    "layer": [
-      {
-        "mark": "line",
-        "encoding": {
-            "color": {"value": "black"}
-        }
-        
-      },
-      {
-        "mark": {"type": "point","filled": true},
-        "encoding": {
-            "y": {
-                "field": "Low"
-            },
-            "color": {"value": "black"}
-        }
-      },
-      {
-        "mark": {"type": "point","filled": true},
-        "encoding": {
-            "y": {
-                "field": "High"
-            },
-            "color": {"value": "black"}
-        }
-      }
-    ]
+    }
   }
+}
