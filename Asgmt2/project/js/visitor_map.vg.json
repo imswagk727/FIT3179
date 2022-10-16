@@ -15,8 +15,8 @@
     }
   },
   "spec": {
-    "width": 500,
-    "height": 300,
+    "width": 760,
+    "height": 437,
     "data": {
       "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/visitors.csv"
     },

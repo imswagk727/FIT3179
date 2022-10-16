@@ -7,7 +7,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp_us.csv"
   },
-  "width": {"step": 28, "for": "position"},
+  "width": "container",
   "params": [
     {
       "name": "state_selection",

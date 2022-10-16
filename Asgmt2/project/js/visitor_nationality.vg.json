@@ -3,7 +3,7 @@
     "title": {
       "text": "Top Nationalities of Foreign Travelers to the U.S."
     },
-    "width": 400,
+    "width": "container",
     "data": {
       "values": [
         {"name": "Canada", "count": 20.7},
