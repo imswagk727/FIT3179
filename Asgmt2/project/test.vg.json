@@ -1,103 +1,144 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "2019 US Visitor Arrival"
-  },
-  "description": "the population per state, engineers per state, and hurricanes per state",
-  "repeat": {
-    "row": [
-      "visitors"
-    ]
-  },
-  "resolve": {
-    "scale": {
-      "color": "independent"
-    }
-  },
-  "spec": {
-    "width": 500,
-    "height": 300,
-    "data": {
-      "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/visitors.csv"
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Monthly Temperature in celsius °C"
     },
-    "transform": [
-      {
-        "lookup": "id",
-        "from": {
-          "data": {
-            "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/us-10m.json",
-            "format": {
-              "type": "topojson",
-              "feature": "states"
-            }
-          },
-          "key": "id"
-        },
-        "as": "geo"
-      }
-    ],
+    "description": "hello im description.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp_us.csv"
+    },
+    "width": {"step": 28, "for": "position"},
     "params": [
       {
-        "name": "highlight",
-        "select": {"type": "point", "on": "mouseover"}
-      },
-      {"name": "select", "select": "point"}
+        "name": "state_selection",
+        "value": "California",
+        "bind": {
+          "input": "select",
+          "options": [
+            "Alaska",
+            "California",
+            "Connecticut",
+            "Florida",
+            "Hawaii",
+            "Illinois",
+            "Massachusetts",
+            "Michigan",
+            "Nevada",
+            "New York"
+          ],
+          "labels": [
+            "Alaska",
+            "California",
+            "Connecticut",
+            "Florida",
+            "Hawaii",
+            "Illinois",
+            "Massachusetts",
+            "Michigan",
+            "Nevada",
+            "New York"
+          ],
+          "name": "State Selection: "
+        }
+      }
     ],
-    "projection": {
-      "type": "albersUsa"
-    },
-    "mark": {
-      "type": "geoshape",
-      "stroke": "gray",
-      "cursor": "pointer"
-    },
-    "encoding": {
-      "shape": {
-        "field": "geo",
-        "type": "geojson"
+    "transform": [
+      {
+        "filter": "datum.state == state_selection"
       },
-      "color": {
-        "field": {
-          "repeat": "row"
+      {
+        "calculate": "(datum.min-32) * 5 / 9",
+        "as": "celsius_low"
+      },
+      {
+        "calculate": "(datum.max-32) * 5 / 9",
+        "as": "celsius_high"
+      }
+    ],
+    "encoding": {
+      "x": {
+        "title": "Month",
+        "field": "Month",
+        "type": "nominal",
+        "axis": {
+          "domain": false,
+          "ticks": false,
+          "labelAngle": 0,
+          "labelPadding": 4
         },
+        "sort": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "y": {
+        "field": "celsius_low",
         "type": "quantitative",
         "scale": {
-          "scheme": "lightgreyteal"
+          "domain": [
+            -20,
+            40
+          ]
+        },
+        "axis": {
+          "gridColor": {
+            "condition": {
+              "test": "datum.value === 0",
+              "value": "black"
+            },
+            "value": "#ddd"
+          }
         }
       },
-      "fillOpacity": {
-        "condition": {
-          "param": "select",
-          "value": 1
-        },
-        "value": 0.1
-      },
-      "strokeWidth": {
-        "condition": [
-          {
-            "param": "select",
-            "empty": false,
-            "value": 2
-          },
-          {
-            "param": "highlight",
-            "empty": false,
-            "value": 1
-          }
-        ],
-        "value": 0
+      "y2": {
+        "field": "celsius_high",
+        "title":"Low and High temperatures"
       },
       "tooltip": [
         {
-          "field": "state",
+          "field": "Month",
           "type": "nominal"
         },
         {
-          "field": "visitors",
+          "field": "celsius_high",
+          "title": "High",
           "type": "quantitative",
-          "format": ","
+          "format": ".1f"
+        },
+        {
+          "field": "celsius_low",
+          "title": "Low",
+          "type": "quantitative",
+          "format": ".1f"
         }
       ]
-    }
+    },
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+            "color": {"value": "black"}
+        }
+        
+      },
+      {
+        "mark": {"type": "point","filled": true},
+        "encoding": {
+            "y": {
+                "field": "celsius_low"
+            },
+            "color": {"value": "black"}
+        }
+      },
+      {
+        "mark": {"type": "point","filled": true},
+        "encoding": {
+            "y": {
+                "field": "celsius_high"
+            },
+            "color": {"value": "black"}
+        }
+      }
+    ]
   }
-}

@@ -86,10 +86,23 @@
   },
   "params": [
     {
-      "name": "highlight",
-      "select": {"type": "point", "on": "mouseover"}
+      "name": "legend_highlight",
+      "select": {
+        "type": "point",
+        "fields": [
+          "Transport Used"
+        ],
+        "on": "click"
+      },
+      "bind": "legend"
     },
-    {"name": "select", "select": "point"}
+    {
+      "name": "highlight",
+      "select": {
+        "type": "point",
+        "on": "mouseover"
+      }
+    }
   ],
   "mark": {
     "type": "bar",
@@ -110,13 +123,15 @@
     "color": {
       "field": "Transport Used"
     },
+    "opacity": {
+      "condition": {
+        "param": "legend_highlight",
+        "value": 0.8
+      },
+      "value": 0.2
+    },
     "strokeWidth": {
       "condition": [
-        {
-          "param": "select",
-          "empty": false,
-          "value": 2
-        },
         {
           "param": "highlight",
           "empty": false,
@@ -124,13 +139,6 @@
         }
       ],
       "value": 0
-    },
-    "fillOpacity": {
-      "condition": {
-        "param": "select",
-        "value": 1
-      },
-      "value": 0.1
     },
     "tooltip": [
       {
@@ -147,5 +155,10 @@
         "format": ".1f"
       }
     ]
+  },
+  "config": {
+    "axis": {
+      "labelAngle": 0
+    }
   }
 }

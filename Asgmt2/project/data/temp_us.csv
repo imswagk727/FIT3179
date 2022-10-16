@@ -1,121 +1,121 @@
 state,Month,max,min
-California,1,54.6,35
-Connecticut,1,36,18.5
-Illinois,1,34.7,18.6
-Nevada,1,43.5,22.1
-Florida,1,69.5,47
-Alaska,1,10.7,-2.4
-Hawaii,1,77,62.5
-Michigan,1,27.6,12.8
-New York,1,30.2,12.9
-Massachusetts,1,34.8,17.1
-California,2,57.3,36.4
-Connecticut,2,38.7,20
-Illinois,2,39.7,22.4
-Nevada,2,46.9,24.5
-Florida,2,72.6,49.9
-Alaska,2,16.2,1.2
-Hawaii,2,76.8,62.5
-Michigan,2,30.6,13.3
-New York,2,32.9,14.2
-Massachusetts,2,37.4,18.6
-California,3,62.3,39.3
-Connecticut,3,46.6,27.1
-Illinois,3,51.3,31.5
-Nevada,3,54.6,29.7
-Florida,3,77,53.8
-Alaska,3,21.2,3.5
-Hawaii,3,77.3,63.5
-Michigan,3,41,21.2
-New York,3,41.4,21.8
-Massachusetts,3,45,25.7
-California,4,67.6,42.6
-Connecticut,4,58.8,36.5
-Illinois,4,63.9,41.3
-Nevada,4,60.7,34
-Florida,4,82.1,58.7
-Alaska,4,35,17.4
-Hawaii,4,78.7,65.1
-Michigan,4,53.8,31.9
-New York,4,54.9,32.9
-Massachusetts,4,57.2,35.4
-California,5,75.6,49
-Connecticut,5,69.5,46.6
-Illinois,5,74.1,52.4
-Nevada,5,70.4,42.1
-Florida,5,87.5,65
-Alaska,5,48.9,31.2
-Hawaii,5,80.4,66.5
-Michigan,5,66.8,42.9
-New York,5,67.3,44.2
-Massachusetts,5,68.2,45.6
-California,6,84.5,55.5
-Connecticut,6,77.7,56
-Illinois,6,82.9,61.5
-Nevada,6,81.3,50
-Florida,6,90.4,70.9
-Alaska,6,59.9,41.9
-Hawaii,6,82.1,68.5
-Michigan,6,76.3,52.9
-New York,6,75.4,53.4
-Massachusetts,6,76.5,54.9
-California,7,90.9,61.4
-Connecticut,7,82.9,61.8
-Illinois,7,85.8,65.1
-Nevada,7,89.9,57.7
-Florida,7,91.6,72.9
-Alaska,7,62.3,45.9
-Hawaii,7,83.3,69.7
-Michigan,7,80.3,57.3
-New York,7,79.7,58.3
-Massachusetts,7,81.9,60.6
-California,8,90.4,60.6
-Connecticut,8,81,60.1
-Illinois,8,84.4,62.8
-Nevada,8,88.1,55.8
-Florida,8,91.3,73.1
-Alaska,8,57.9,42.8
-Hawaii,8,84,70.3
-Michigan,8,78.4,56.2
-New York,8,78,56.7
-Massachusetts,8,80.3,59
-California,9,85.2,55.9
-Connecticut,9,73.9,52.9
-Illinois,9,78.5,55
-Nevada,9,79.4,47.6
-Florida,9,89,71
-Alaska,9,48.3,34.5
-Hawaii,9,83.8,69.8
-Michigan,9,71.1,48.8
-New York,9,71.1,49.7
-Massachusetts,9,73,51.7
-California,10,74.4,47.7
-Connecticut,10,62.5,41.7
-Illinois,10,66.1,43.5
-Nevada,10,66,37.1
-Florida,10,83.6,63.8
-Alaska,10,33.2,21.1
-Hawaii,10,82.7,68.8
-Michigan,10,57.7,38.5
-New York,10,58.6,39
-Massachusetts,10,61.3,40.8
-California,11,62,39.6
-Connecticut,11,51.1,32.6
-Illinois,11,51.3,33
-Nevada,11,52.3,27.6
-Florida,11,76.6,55
-Alaska,11,19.4,7.3
-Hawaii,11,80.2,67
-Michigan,11,43.8,28.8
-New York,11,46.2,29.6
-Massachusetts,11,50.1,31.8
-California,12,53.7,34.2
-Connecticut,12,40.9,24.4
-Illinois,12,39.4,23.7
-Nevada,12,42.6,21.1
-Florida,12,71.5,50
-Alaska,12,13.2,0.7
-Hawaii,12,78.1,64.6
-Michigan,12,32.8,19.6
-New York,12,35.4,20.3
-Massachusetts,12,39.8,23.2
+California,Jan,54.6,35
+Connecticut,Jan,36,18.5
+Illinois,Jan,34.7,18.6
+Nevada,Jan,43.5,22.1
+Florida,Jan,69.5,47
+Alaska,Jan,10.7,-2.4
+Hawaii,Jan,77,62.5
+Michigan,Jan,27.6,12.8
+New York,Jan,30.2,12.9
+Massachusetts,Jan,34.8,17.1
+California,Feb,57.3,36.4
+Connecticut,Feb,38.7,20
+Illinois,Feb,39.7,22.4
+Nevada,Feb,46.9,24.5
+Florida,Feb,72.6,49.9
+Alaska,Feb,16.2,1.2
+Hawaii,Feb,76.8,62.5
+Michigan,Feb,30.6,13.3
+New York,Feb,32.9,14.2
+Massachusetts,Feb,37.4,18.6
+California,Mar,62.3,39.3
+Connecticut,Mar,46.6,27.1
+Illinois,Mar,51.3,31.5
+Nevada,Mar,54.6,29.7
+Florida,Mar,77,53.8
+Alaska,Mar,21.2,3.5
+Hawaii,Mar,77.3,63.5
+Michigan,Mar,41,21.2
+New York,Mar,41.4,21.8
+Massachusetts,Mar,45,25.7
+California,Apr,67.6,42.6
+Connecticut,Apr,58.8,36.5
+Illinois,Apr,63.9,41.3
+Nevada,Apr,60.7,34
+Florida,Apr,82.1,58.7
+Alaska,Apr,35,17.4
+Hawaii,Apr,78.7,65.1
+Michigan,Apr,53.8,31.9
+New York,Apr,54.9,32.9
+Massachusetts,Apr,57.2,35.4
+California,May,75.6,49
+Connecticut,May,69.5,46.6
+Illinois,May,74.1,52.4
+Nevada,May,70.4,42.1
+Florida,May,87.5,65
+Alaska,May,48.9,31.2
+Hawaii,May,80.4,66.5
+Michigan,May,66.8,42.9
+New York,May,67.3,44.2
+Massachusetts,May,68.2,45.6
+California,Jun,84.5,55.5
+Connecticut,Jun,77.7,56
+Illinois,Jun,82.9,61.5
+Nevada,Jun,81.3,50
+Florida,Jun,90.4,70.9
+Alaska,Jun,59.9,41.9
+Hawaii,Jun,82.1,68.5
+Michigan,Jun,76.3,52.9
+New York,Jun,75.4,53.4
+Massachusetts,Jun,76.5,54.9
+California,Jul,90.9,61.4
+Connecticut,Jul,82.9,61.8
+Illinois,Jul,85.8,65.1
+Nevada,Jul,89.9,57.7
+Florida,Jul,91.6,72.9
+Alaska,Jul,62.3,45.9
+Hawaii,Jul,83.3,69.7
+Michigan,Jul,80.3,57.3
+New York,Jul,79.7,58.3
+Massachusetts,Jul,81.9,60.6
+California,Aug,90.4,60.6
+Connecticut,Aug,81,60.1
+Illinois,Aug,84.4,62.8
+Nevada,Aug,88.1,55.8
+Florida,Aug,91.3,73.1
+Alaska,Aug,57.9,42.8
+Hawaii,Aug,84,70.3
+Michigan,Aug,78.4,56.2
+New York,Aug,78,56.7
+Massachusetts,Aug,80.3,59
+California,Sep,85.2,55.9
+Connecticut,Sep,73.9,52.9
+Illinois,Sep,78.5,55
+Nevada,Sep,79.4,47.6
+Florida,Sep,89,71
+Alaska,Sep,48.3,34.5
+Hawaii,Sep,83.8,69.8
+Michigan,Sep,71.1,48.8
+New York,Sep,71.1,49.7
+Massachusetts,Sep,73,51.7
+California,Oct,74.4,47.7
+Connecticut,Oct,62.5,41.7
+Illinois,Oct,66.1,43.5
+Nevada,Oct,66,37.1
+Florida,Oct,83.6,63.8
+Alaska,Oct,33.2,21.1
+Hawaii,Oct,82.7,68.8
+Michigan,Oct,57.7,38.5
+New York,Oct,58.6,39
+Massachusetts,Oct,61.3,40.8
+California,Nov,62,39.6
+Connecticut,Nov,51.1,32.6
+Illinois,Nov,51.3,33
+Nevada,Nov,52.3,27.6
+Florida,Nov,76.6,55
+Alaska,Nov,19.4,7.3
+Hawaii,Nov,80.2,67
+Michigan,Nov,43.8,28.8
+New York,Nov,46.2,29.6
+Massachusetts,Nov,50.1,31.8
+California,Dec,53.7,34.2
+Connecticut,Dec,40.9,24.4
+Illinois,Dec,39.4,23.7
+Nevada,Dec,42.6,21.1
+Florida,Dec,71.5,50
+Alaska,Dec,13.2,0.7
+Hawaii,Dec,78.1,64.6
+Michigan,Dec,32.8,19.6
+New York,Dec,35.4,20.3
+Massachusetts,Dec,39.8,23.2
