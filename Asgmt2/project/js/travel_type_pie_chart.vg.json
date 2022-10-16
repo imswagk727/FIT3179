@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Pie Chart with percentage_tooltip",
+    "data": {
+      "values": [
+        {"Category": "Chilling on a beach", "popularity": 38},
+            {"Category": "Camping trip", "popularity": 25},
+            {"Category": "City tour", "popularity": 30},
+            {"Category": "Road trip", "popularity": 16},
+            {"Category": "Cruise", "popularity": 13},
+            {"Category": "Hiking", "popularity": 18}
+      ]
+    },
+    "width":"container",
+    "mark": {"type": "arc", "tooltip": true, "innerRadius": 50},
+    "encoding": {
+      "theta": {"field": "popularity", "type": "quantitative", "stack": "normalize"},
+      "color": {"field": "Category", "type": "nominal"}
+    }
+  }
+  
+  

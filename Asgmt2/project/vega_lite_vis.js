@@ -20,6 +20,10 @@ var visitor_coming_bar = "js/visitor_coming_bar_chart.vg.json";
 vegaEmbed("#visitor_coming_bar_chart", visitor_coming_bar).then(function (result) {
 }).catch(console.error);
 
+var travel_types_pie = "js/travel_type_pie_chart.vg.json";
+vegaEmbed("#travel_types_pie", travel_types_pie).then(function (result) {
+}).catch(console.error);
+
 var vg_10 = "test.vg.json";
 vegaEmbed("#test", vg_10).then(function (result) {
 }).catch(console.error);
