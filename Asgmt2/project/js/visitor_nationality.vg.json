@@ -28,7 +28,10 @@
         "color": {
           "field": "count",
           "type": "quantitative",
-          "title": "In million"
+          "title": "In million",
+          "scale":{
+            "scheme": "oranges"
+          }
         }
       }
     }, {

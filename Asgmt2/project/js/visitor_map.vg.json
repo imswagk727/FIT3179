@@ -68,7 +68,7 @@
         },
         "type": "quantitative",
         "scale": {
-          "scheme": "lightgreyteal"
+          "scheme": "oranges"
         }
       },
       "fillOpacity": {

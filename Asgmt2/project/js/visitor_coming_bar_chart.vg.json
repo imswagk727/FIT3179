@@ -122,7 +122,12 @@
       "field": "Transport Used"
     },
     "color": {
-      "field": "Transport Used"
+      "field": "Transport Used",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Air transport", "Railway transport", "Road transport", "Sea transport"],
+        "range": ["#009999", "#FDE74C", "#4C5B5C", "#DB5461"] 
+      }
     },
     "opacity": {
       "condition": {
