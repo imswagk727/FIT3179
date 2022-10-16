@@ -7,6 +7,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/temp_us.csv"
   },
+  "width": {"step": 28, "for": "position"},
   "params": [
     {
       "name": "state_selection",
@@ -47,15 +48,16 @@
     },
     {
       "calculate": "(datum.min-32) * 5 / 9",
-      "as": "Low"
+      "as": "celsius_low"
     },
     {
       "calculate": "(datum.max-32) * 5 / 9",
-      "as": "High"
+      "as": "celsius_high"
     }
   ],
   "encoding": {
     "x": {
+      "title": "Month",
       "field": "Month",
       "type": "nominal",
       "axis": {
@@ -71,7 +73,7 @@
       ]
     },
     "y": {
-      "field": "Low",
+      "field": "celsius_low",
       "type": "quantitative",
       "scale": {
         "domain": [
@@ -90,7 +92,8 @@
       }
     },
     "y2": {
-      "field": "High"
+      "field": "celsius_high",
+      "title":"Low and High temperatures"
     },
     "tooltip": [
       {
@@ -98,12 +101,14 @@
         "type": "nominal"
       },
       {
-        "field": "High",
+        "field": "celsius_high",
+        "title": "High",
         "type": "quantitative",
         "format": ".1f"
       },
       {
-        "field": "Low",
+        "field": "celsius_low",
+        "title": "Low",
         "type": "quantitative",
         "format": ".1f"
       }
@@ -121,7 +126,7 @@
       "mark": {"type": "point","filled": true},
       "encoding": {
           "y": {
-              "field": "Low"
+              "field": "celsius_low"
           },
           "color": {"value": "black"}
       }
@@ -130,7 +135,7 @@
       "mark": {"type": "point","filled": true},
       "encoding": {
           "y": {
-              "field": "High"
+              "field": "celsius_high"
           },
           "color": {"value": "black"}
       }
