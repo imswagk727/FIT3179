@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Pie Chart with percentage_tooltip",
+    "title":"Purpose of travel for tourists",
     "data": {
       "values": [
         {"Category": "Chilling on a beach", "popularity": 38},
