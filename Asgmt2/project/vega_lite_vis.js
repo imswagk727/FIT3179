@@ -16,8 +16,8 @@ vegaEmbed("#visitor_nationality", nationality_bar).then(function (result) {
 }).catch(console.error);
 
 
-var visitor_coming_bar = "js/visitor_coming_bar_chart.vg.json";
-vegaEmbed("#visitor_coming_bar_chart", visitor_coming_bar).then(function (result) {
+var visitor_transport_bar = "js/visitor_transport_bar_chart.vg.json";
+vegaEmbed("#visitor_transport_bar_chart", visitor_transport_bar).then(function (result) {
 }).catch(console.error);
 
 var travel_types_pie = "js/travel_type_pie_chart.vg.json";

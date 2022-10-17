@@ -15,8 +15,8 @@
     }
   },
   "spec": {
-    "width": 760,
-    "height": 437,
+    "width": 800,
+    "height": 500,
     "data": {
       "url": "https://raw.githubusercontent.com/imswagk727/FIT3179/main/Asgmt2/project/data/visitors.csv"
     },
@@ -41,7 +41,8 @@
         "name": "highlight",
         "select": {
           "type": "point",
-          "on": "mouseover"
+          "on": "mouseover",
+          "clear": "mouseout"
         }
       },
       {

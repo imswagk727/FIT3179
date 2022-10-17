@@ -101,7 +101,8 @@
       "name": "highlight",
       "select": {
         "type": "point",
-        "on": "mouseover"
+        "on": "mouseover",
+        "clear": "mouseout"
       }
     }
   ],

@@ -12,10 +12,36 @@
       ]
     },
     "width":"container",
-    "mark": {"type": "arc", "tooltip": true, "innerRadius": 50},
+    "params": [
+      {
+        "name": "highlight",
+        "select": {
+          "type": "point",
+          "on": "mouseover",
+          "clear": "mouseout"
+        }
+      }
+    ],
+    "mark": {"type": "arc","stroke": "black", "tooltip": true, "innerRadius": 50},
     "encoding": {
       "theta": {"field": "popularity", "type": "quantitative", "stack": "normalize"},
-      "color": {"field": "Category", "type": "nominal"}
+      "color": {
+        "field": "Category",
+        "type": "nominal",
+        "scale": {
+          "scheme": "set2"
+        }
+      },
+      "strokeWidth": {
+        "condition": [
+          {
+            "param": "highlight",
+            "empty": false,
+            "value": 1
+          }
+        ],
+        "value": 0
+      }
     }
   }
   
