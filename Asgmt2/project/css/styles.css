@@ -1,10 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 .body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
 h1 {
-    font-weight: 900;
+    font-size: 40px;
+    font-family: "Roboto Slab";
+    color: #1e1e1e;
 }
+
+h2 {
+    font-family: "Roboto Slab";
+    font-size: 30px;
+    color: #4a4a4a;
+}
+
+p {
+    color: #6e6e6e;
+    font-weight: 600;
+    font-family: "Source Sans Pro";
+}
+
 
 body {
     background-color: lightgray;
